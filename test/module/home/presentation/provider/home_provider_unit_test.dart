@@ -32,10 +32,8 @@ void main() {
       () async {
         //arrange
         arrangeNewsServiceReturns3Articles();
-
         //act
         sut.getNews();
-
         //assert
         expect(sut.isLoading, true);
       },
@@ -45,10 +43,8 @@ void main() {
       () async {
         //arrange
         arrangeNewsServiceReturns3Articles();
-
         //act
         await sut.getNews();
-
         //assert
         expect(sut.articles, articlesMock);
         expect(sut.isLoading, false);
