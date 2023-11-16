@@ -21,7 +21,7 @@ void main() {
       Article(title: 'Article 2', description: 'Lorem'),
     ];
 
-    void arrangeNewsServiceReturns3Articles() {
+    void arrangeNewsArticles() {
       when(() => mockGetNewsUsecase()).thenAnswer(
         (_) async => articlesMock,
       );
@@ -31,7 +31,7 @@ void main() {
       "Check if the loading value change so that the UI will update",
       () async {
         //arrange
-        arrangeNewsServiceReturns3Articles();
+        arrangeNewsArticles();
         //act
         sut.getNews();
         //assert
@@ -42,7 +42,7 @@ void main() {
       "Check if the proper article data are coming back from the usecase",
       () async {
         //arrange
-        arrangeNewsServiceReturns3Articles();
+        arrangeNewsArticles();
         //act
         await sut.getNews();
         //assert
@@ -50,5 +50,25 @@ void main() {
         expect(sut.isLoading, false);
       },
     );
+  });
+
+  test(
+      "Test Title",
+      () => {
+            //desired method to test
+          });
+
+  group("Group testing title", () {
+    test(
+        "Test Title",
+        () => {
+              //desired method to test
+            });
+
+    test(
+        "Test Title",
+        () => {
+              //desired method to test
+            });
   });
 }
